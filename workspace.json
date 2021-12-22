@@ -3,6 +3,10 @@
   "projects": {
     "dashboard": "apps/dashboard",
     "dashboard-e2e": "apps/dashboard-e2e",
+    "feat-login": "libs/feat-login",
+    "login": "apps/login",
+    "login-e2e": "apps/login-e2e",
+    "shared-auth": "libs/shared/auth",
     "todo": "apps/todo",
     "todo-e2e": "apps/todo-e2e"
   }

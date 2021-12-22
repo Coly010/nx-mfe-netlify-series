@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mfe-netlify/feat-login": ["libs/feat-login/src/index.ts"],
+      "@mfe-netlify/shared/auth": ["libs/shared/auth/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

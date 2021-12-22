@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/auth",
+  "sourceRoot": "libs/shared/auth/src",
+  "prefix": "mfe-netlify",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/auth"],
+      "options": {
+        "jestConfig": "libs/shared/auth/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/auth/src/**/*.ts",
+          "libs/shared/auth/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/feat-login",
+  "sourceRoot": "libs/feat-login/src",
+  "prefix": "mfe-netlify",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/feat-login"],
+      "options": {
+        "jestConfig": "libs/feat-login/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feat-login/src/**/*.ts",
+          "libs/feat-login/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
