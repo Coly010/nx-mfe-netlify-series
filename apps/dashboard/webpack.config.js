@@ -21,6 +21,7 @@ sharedMappings.register(
   tsConfigPath,
   [
     /* mapped paths to share */
+    '@mfe-netlify/shared/auth',
   ],
   workspaceRootPath
 );
@@ -44,8 +45,8 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       remotes: {
-        todo: 'http://localhost:4201/remoteEntry.js',
-        login: 'http://localhost:4202/remoteEntry.js',
+        todo: 'https://lucid-cray-c41a7f.netlify.app/remoteEntry.js',
+        login: 'https://wonderful-euclid-5a7ba0.netlify.app/remoteEntry.js',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },

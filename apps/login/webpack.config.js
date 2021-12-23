@@ -21,6 +21,7 @@ sharedMappings.register(
   tsConfigPath,
   [
     /* mapped paths to share */
+    '@mfe-netlify/shared/auth',
   ],
   workspaceRootPath
 );

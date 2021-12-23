@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from '@mfe-netlify/shared/auth';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -12,14 +13,25 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot(
       [
         {
-          path: 'todo',
-          loadChildren: () =>
-            import('todo/Module').then((m) => m.RemoteEntryModule),
-        },
-        {
-          path: 'login',
-          loadChildren: () =>
-            import('login/Module').then((m) => m.RemoteEntryModule),
+          path: '',
+          children: [
+            {
+              path: '',
+              redirectTo: '/todo',
+              pathMatch: 'full',
+            },
+            {
+              path: 'todo',
+              loadChildren: () =>
+                import('todo/Module').then((m) => m.RemoteEntryModule),
+              canActivate: [AuthGuard],
+            },
+            {
+              path: 'login',
+              loadChildren: () =>
+                import('login/Module').then((m) => m.RemoteEntryModule),
+            },
+          ],
         },
       ],
       { initialNavigation: 'enabledBlocking' }
